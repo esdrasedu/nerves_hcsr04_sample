@@ -47,7 +47,8 @@ defmodule NervesHcsr04Sample.MixProject do
 
   defp deps(target) do
     [
-      {:nerves_runtime, "~> 0.4"}
+      {:nerves_runtime, "~> 0.4"},
+      {:nerves_hcsr04, "~> 0.1.0"}
     ] ++ system(target)
   end
 

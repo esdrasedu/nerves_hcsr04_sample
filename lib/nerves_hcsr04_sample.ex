@@ -3,16 +3,12 @@ defmodule NervesHcsr04Sample do
   Documentation for NervesHcsr04Sample.
   """
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> NervesHcsr04Sample.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def distance do
+    {:ok, sensor} = MyGenServer.start_link({16, 18})
+    :ok = MyGenServer.update(sensor)
+    Process.sleep(1000)
+    {:ok, distance} = MyGenServer.info(sensor)
+    distance
   end
+
 end
